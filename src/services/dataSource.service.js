@@ -13,7 +13,7 @@ const createDataSource = async (filePath, sourceName, schema) => {
     // create temporary table with columns from schema
     const createTableQuery = `
       CREATE TABLE IF NOT EXISTS ${tempTableName} (         
-        ${schema.map(s => `${s.key.toLowerCase()} ${DATA_TYPE_MAP[s.type]}`).join(',')}
+        ${schema.map(s => `${s.key.toLowerCase()} ${DATA_TYPE_MAP[s.type.toLowerCase()]}`).join(',')}
       );  
     `;
     await client.query(createTableQuery);
