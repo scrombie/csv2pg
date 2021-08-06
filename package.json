@@ -1,0 +1,42 @@
+{
+  "name": "csv2pg",
+  "version": "0.0.1",
+  "description": "Simple tool to migrate data from a csv file to a postgres database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pm2 start ecosystem.config.json --no-daemon",
+    "start:dev": "cross-env NODE_ENV=development nodemon src/index.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier --check **/*.js",
+    "prettier:fix": "prettier --write **/*.js"
+  },
+  "keywords": [
+    "utility",
+    "tools",
+    "postgres",
+    "csv"
+  ],
+  "author": "scrombie",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "http-status": "^1.5.0",
+    "joi": "^17.4.1",
+    "multer": "^1.4.2",
+    "pg": "^8.7.1",
+    "pg-copy-streams": "^5.1.1",
+    "pm2": "^5.1.0"
+  }
+}
